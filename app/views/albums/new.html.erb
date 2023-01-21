@@ -2,7 +2,7 @@
 
  <%= form_with model: @album do |form| %>
  	<div>
- 		<%= collection_select(:album, :artist_id, Artist.all, :id, :name, prompt: true) %>
+ 		<%= form.select(:artist_id, @artist_options) %>
  		<% @album.errors.full_messages_for(:artist_id).each do |message| %>
  			<div><%= message %></div>
  		<% end %>

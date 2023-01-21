@@ -10,6 +10,7 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    @artist_options = Artist.all.map{|a| [a.name, a.id]}
   end
 
   def create
