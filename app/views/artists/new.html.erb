@@ -1,0 +1,10 @@
+<h1>New Artist</h1>
+
+<%= form_with model: @artist do |form| %>
+	<div>
+		<%= form.label :name %>
+		<br />
+		<%= form.text_field :name %>
+	</div>
+	<%= form.submit %>
+<% end %>
