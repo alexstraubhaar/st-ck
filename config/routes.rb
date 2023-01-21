@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "albums#index"
+  root "artists#index"
 
   resources :albums
   resources :artists

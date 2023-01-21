@@ -1,3 +1,5 @@
-<h1><%= @album.title %></h1>
+<h1><%= @album.artist.name %> - <%= @album.title %></h1>
 
-<p><%= link_to @album.artist.name, @album.artist %></p>
+<p>Currently in stock: <%= @album.in_stock %></p>
+
+<p><%= link_to "Back to artist's page", @album.artist %></p>
