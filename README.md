@@ -5,5 +5,5 @@
 * Rails 7.0.4
 
 * GEMs
-pg - Postgresql database
-bootstrap - CSS / JS framework
+** pg - Postgresql database
+** bootstrap - CSS / JS framework
