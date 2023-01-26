@@ -4,3 +4,9 @@
 
 <p><%= link_to "Artist's page", @album.artist %></p>
 <p><%= link_to "Edit", edit_album_path(@album) %></p>
+<p>
+	<%= link_to "Destroy", album_path(@album), data: {
+		turbo_method: :delete,
+		turbo_confirm: "Are you sure ?"
+	} %>
+</p>
