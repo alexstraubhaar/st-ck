@@ -1,0 +1,11 @@
+<%= form_with model: artist do |form| %>
+	<div>
+		<%= form.label :name %>
+		<br />
+		<%= form.text_field :name %>
+		<% artist.errors.full_messages_for(:name).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+	<%= form.submit %>
+<% end %>
