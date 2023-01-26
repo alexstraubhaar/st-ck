@@ -12,6 +12,9 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg"
 
+# Use bootstrap as CSS / JS framework
+gem "bootstrap"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
