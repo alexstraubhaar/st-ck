@@ -2,4 +2,5 @@
 
 <p>Currently in stock: <%= @album.in_stock %></p>
 
-<p><%= link_to "Back to artist's page", @album.artist %></p>
+<p><%= link_to "Artist's page", @album.artist %></p>
+<p><%= link_to "Edit", edit_album_path(@album) %></p>

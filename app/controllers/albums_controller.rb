@@ -23,6 +23,21 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def edit
+    @album = Album.find(params[:id])
+    @artist_options = Artist.all.map{|a| [a.name, a.id]}
+  end
+
+  def update
+    @album = Album.find(params[:id])
+
+    if @album.update(album_params)
+      redirect_to @album
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
     def album_params
       params.require(:album).permit(:title, :artist_id)
