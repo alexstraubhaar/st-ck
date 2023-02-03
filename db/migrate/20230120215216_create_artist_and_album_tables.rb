@@ -5,8 +5,13 @@ class CreateArtistAndAlbumTables < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
+    create_table :orders do |t|
+      t.timestamps
+    end
+
     create_table :albums do |t|
       t.belongs_to :artist, foreign_key: true
+      t.belongs_to :order, foreign_key: true
       t.datetime :published_at
       t.timestamps
     end

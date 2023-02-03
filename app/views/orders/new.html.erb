@@ -1,0 +1,12 @@
+<h1>New order</h1>
+
+<%= render "form", albums: @albums %>
+
+<script>
+
+	$.('#AddAlbumField').add(function()
+	{
+		$.('#AlbumList').append('<%= form.select @albums %>');
+	});
+
+</script>
