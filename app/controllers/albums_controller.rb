@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_action :set_select_collections, only: [:edit, :create, :new, :update]
 
   def index
     @albums = Album.all
@@ -10,7 +11,6 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
-    @artist_options = Artist.all.map{|a| [a.name, a.id]}
   end
 
   def create
@@ -25,7 +25,6 @@ class AlbumsController < ApplicationController
 
   def edit
     @album = Album.find(params[:id])
-    @artist_options = Artist.all.map{|a| [a.name, a.id]}
   end
 
   def update
@@ -48,6 +47,10 @@ class AlbumsController < ApplicationController
   private
     def album_params
       params.require(:album).permit(:title, :artist_id, :in_stock, :price)
+    end
+
+    def set_select_collections
+      @artist_options = Artist.all.map{|a| [a.name, a.id]}
     end
 
 end
