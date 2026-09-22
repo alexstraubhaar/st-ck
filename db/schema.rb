@@ -16,15 +16,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_30_184643) do
 
   create_table "albums", force: :cascade do |t|
     t.bigint "artist_id"
+    t.bigint "order_id"
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
     t.integer "in_stock", default: 0
     t.float "price", default: 0.0
-    t.bigint "order_id"
+    t.bigint "orders_id"
     t.index ["artist_id"], name: "index_albums_on_artist_id"
     t.index ["order_id"], name: "index_albums_on_order_id"
+    t.index ["orders_id"], name: "index_albums_on_orders_id"
   end
 
   create_table "artists", force: :cascade do |t|
